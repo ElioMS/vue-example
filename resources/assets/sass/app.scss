@@ -1,0 +1,13 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+h2 {
+  &.title {
+    padding: 25px 0px 10px 0px;
+    color: $color-title;
+  }
+  font-weight: bold;
+}

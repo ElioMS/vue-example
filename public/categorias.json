@@ -1,0 +1,48 @@
+[
+  {
+    "filter_id"                    : "category" ,
+    "filter_description"           : "Categorías",
+    "filter_quantity"              : "4058",
+    "filter_values"                : [
+      {
+        "option_id"         : "001",
+        "option_content"    : "Cocina",
+        "option_quantity"   : 109
+      },
+      {
+        "option_id"         :"002",
+        "option_content"    :"Delivery",
+        "option_quantity"   :108
+      },
+      {
+        "option_id"         :"003",
+        "option_content"    :"Administración",
+        "option_quantity"   :109
+      },
+      {
+        "option_id"         :"004",
+        "option_content"    :"Call Center",
+        "option_quantity"   :108
+      },
+      {
+        "option_id"         :"005",
+        "option_content"    :"Cajero",
+        "option_quantity"   :109
+      },
+      {
+        "option_id"         :"006",
+        "option_content"    :"Gerente de Tienda",
+        "option_quantity":108
+      },
+      {
+        "option_id"         :"007",
+        "option_content"    :"Corporativo",
+        "option_quantity"   :109
+      },
+      {
+        "option_id"         :"008",
+        "option_content"    :"Atención al cliente",
+        "option_quantity"   :108
+      }]
+  }
+]
