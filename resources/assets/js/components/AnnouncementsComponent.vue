@@ -1,9 +1,9 @@
 <template>
 	<div class="row">
-		<div class="col" style="display: inline;" v-for="announcement in announcements">
+		<div class="col-md-12" v-for="announcement in announcements">
 			<div class="card">
 				<div class="card-header">
-					{{ announcement.title }}
+					<a href="http://localhost:8000/anuncio/1"> {{ announcement.title }} </a>
 				</div>
 
 				<div class="card-body">
@@ -26,7 +26,8 @@
                 var self = this;
                 axios.get('https://private-ecff9-o7jobs1.apiary-mock.com/announcements')
                     .then( function (response) {
-						self.announcements = response.data;
+                        // console.log(response.data.data)
+                        self.announcements = response.data.data;
                     });
             }
         },

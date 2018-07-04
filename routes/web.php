@@ -7,3 +7,8 @@ Route::get('/', function () {
 Route::get('anuncios', function () {
 	return view('announcements');
 });
+
+Route::get('anuncio/{id}', function () {
+	return view('announcement');
+});
+

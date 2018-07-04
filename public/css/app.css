@@ -1,9 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);h2 {
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);body {
+  font-family: "Raleway", sans-serif;
+}
+
+h2 {
   font-weight: bold;
 }
 
 h2.title {
   padding: 25px 0px 10px 0px;
   color: #cd5c5c;
+}
+
+.category-card {
+  margin-bottom: 10px;
 }
 
