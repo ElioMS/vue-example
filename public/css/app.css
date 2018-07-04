@@ -11,6 +11,16 @@ h2.title {
   color: #cd5c5c;
 }
 
+img.user-icon {
+  border-radius: 25px;
+  border: 1px solid;
+}
+
+span.author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .category-card {
   margin-bottom: 10px;
 }

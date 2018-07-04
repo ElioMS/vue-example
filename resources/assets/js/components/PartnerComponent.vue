@@ -6,7 +6,7 @@
 			<div class="card-body">
 				<h5 class="card-title">{{ partner.content }}</h5>
 				<p class="card-text"> {{ partner.description }} </p>
-				<a href="#" class="btn btn-primary btn-block"> Quiero saber mas </a>
+				<a :href="'/empresa/' +partner.id " class="btn btn-primary btn-block"> Quiero saber mas </a>
 			</div>
 		</div>
 	</div>
