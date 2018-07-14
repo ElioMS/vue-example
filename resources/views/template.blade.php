@@ -16,6 +16,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('anuncios') }}"> Anuncios </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('registrar') }}"> Anuncios </a>
+            </li>
         </ul>
     </div>
 </nav>

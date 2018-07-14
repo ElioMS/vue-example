@@ -4,6 +4,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('registrar', function () {
+	return view('registro');
+});
+
 Route::get('anuncios', function () {
 	return view('announcements');
 });
@@ -11,4 +15,6 @@ Route::get('anuncios', function () {
 Route::get('anuncio/{id}', function () {
 	return view('announcement');
 });
+
+Route::post('ruta-post', 'TestController@test');
 
