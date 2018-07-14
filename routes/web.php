@@ -18,3 +18,7 @@ Route::get('anuncio/{id}', function () {
 
 Route::post('ruta-post', 'TestController@test');
 
+Route::get('empresa/{id}', function () {
+    return view('company');
+});
+

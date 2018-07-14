@@ -48152,7 +48152,7 @@ var render = function() {
                 "a",
                 {
                   staticClass: "btn btn-primary btn-block",
-                  attrs: { href: "#" }
+                  attrs: { href: "/empresa/" + partner.id }
                 },
                 [_vm._v(" Quiero saber mas ")]
               )
@@ -48444,7 +48444,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48466,22 +48466,62 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "AnnouncementComponent",
     data: function data() {
         return {
-            announcement: null
+            announcement: {
+                title: 'Analista Programador',
+                salary: '3500',
+                location_content: 'Santiago de Surco',
+                schedule_type_content: 'Part-Time',
+                begin_date: '25/06/2018'
+            }
+
         };
     },
 
     methods: {
         getAnnouncement: function getAnnouncement() {
-            axios.get('https://private-ecff9-o7jobs1.apiary-mock.com/announcement/1').then(function (response) {});
+            axios.get('https://private-ecff9-o7jobs1.apiary-mock.com/announcement/1').then(function (response) {
+                console.log(response);
+            });
+        },
+        calculatePeriod: function calculatePeriod(date) {
+            var actualDate = moment(),
+                announcementDate = moment(date, "DD-MM-YYYY").locale('es');
+
+            var difference = actualDate.diff(announcementDate);
+
+            var d = moment.duration(difference).locale('es'),
+                totalInDays = parseInt(d.asDays());
+
+            switch (true) {
+                case totalInDays <= 7:
+                    var message = 'Hace ' + totalInDays + ' dias';
+                    break;
+                case 7 < totalInDays && totalInDays <= 30:
+                    var weeks = parseInt(totalInDays / 7);
+                    var message = 'Hace ' + weeks + ' semanas';
+                    break;
+                case totalInDays > 30:
+                    var message = 'Hace ' + parseInt(d.asMonths()) + ' meses';
+                    break;
+            }
+
+            return message;
+        },
+        getCompany: function getCompany(id) {
+            axios.get('https://private-ecff9-o7jobs1.apiary-mock.com/filters/companies?company_id=' + id).then(function (response) {});
         }
     },
-    created: function created() {
-        this.$route;
+    mounted: function mounted() {
+        // this.$route.params.id
     }
 });
 
@@ -48493,25 +48533,364 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("div", { staticClass: "jumbotron jumbotron-fluid" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("h3", [_vm._v(" " + _vm._s(_vm.announcement.title) + " ")]),
+        _vm._v(" "),
+        _c("span", [
+          _c("i", { staticClass: "fas fa-binoculars" }),
+          _vm._v(" " + _vm._s(_vm.announcement.location_content) + " ")
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("i", { staticClass: "far fa-calendar-alt" }),
+          _vm._v(
+            " " + _vm._s(_vm.calculatePeriod(_vm.announcement.begin_date)) + " "
+          )
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("i", { staticClass: "far fa-clock" }),
+          _vm._v(" " + _vm._s(_vm.announcement.schedule_type_content) + " ")
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("i", { staticClass: "fas fa-dollar-sign" }),
+          _vm._v(" " + _vm._s(_vm.announcement.salary) + " ")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "lead" }, [
+          _vm._v(
+            "This is a modified jumbotron that occupies the entire horizontal space of its parent."
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-8f5faa62", module.exports)
+  }
+}
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(72)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(74)
+/* template */
+var __vue_template__ = __webpack_require__(75)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-1a9916bb"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/PartnerDetailComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1a9916bb", Component.options)
+  } else {
+    hotAPI.reload("data-v-1a9916bb", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(73);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("4be59d42", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1a9916bb\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PartnerDetailComponent.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1a9916bb\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PartnerDetailComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 74 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: "partner-detail-component",
+    data: function data() {
+        return {
+            company: [],
+            testimonies: [],
+            announcements: []
+        };
+    },
+
+    methods: {
+        getCompany: function getCompany() {
+            var company = {
+                title: 'BEMBOS',
+                subtitle: 'como bembos no hay otra',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+            };
+
+            this.company = company;
+        },
+        getTestimonies: function getTestimonies() {
+            var testimonies = [{
+                content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                name: 'Juan Perez',
+                image: 'https://marketplace.canva.com/MAB2sqFKHu0/1/thumbnail_large/canva-business-people-design-person-icon--MAB2sqFKHu0.png'
+            }, {
+                content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                name: 'Marco Polo',
+                image: 'https://marketplace.canva.com/MAB2sqFKHu0/1/thumbnail_large/canva-business-people-design-person-icon--MAB2sqFKHu0.png'
+            }];
+
+            this.testimonies = testimonies;
+        },
+        getHighlightAnnouncements: function getHighlightAnnouncements() {
+            self = this;
+            axios.get('https://private-ecff9-o7jobs1.apiary-mock.com/announcements?company_id=001&only_highlighted=true').then(function (response) {
+                $.each(response.data.data, function (index, value) {
+                    self.announcements.push(value);
+                });
+            });
+        }
+    },
+    created: function created() {
+        this.getCompany();
+        this.getTestimonies();
+        this.getHighlightAnnouncements();
+    }
+});
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h2", { staticClass: "title" }, [
+      _vm._v(" " + _vm._s(_vm.company.title) + " ")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-7" }, [
+        _c("h3", [_vm._v(" " + _vm._s(_vm.company.subtitle))]),
+        _vm._v(" "),
+        _c("p", [_vm._v(" " + _vm._s(_vm.company.description))]),
+        _vm._v(" "),
+        _vm._m(0)
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-5" }, [
+        _c("h3", [_vm._v(" " + _vm._s(_vm.company.subtitle))])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("h2", { staticClass: "title" }, [_vm._v(" Que piensan de nosotros ")]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.testimonies, function(testimony) {
+        return _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-body" }, [
+              _c("img", {
+                staticClass: "user-icon",
+                attrs: {
+                  src: testimony.image,
+                  width: "50px",
+                  height: "50px",
+                  alt: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("span", { staticClass: "author" }, [
+                _vm._v(" " + _vm._s(testimony.name) + " ")
+              ]),
+              _vm._v(" "),
+              _c("p", [_vm._v(" " + _vm._s(testimony.content))])
+            ])
+          ])
+        ])
+      })
+    ),
+    _vm._v(" "),
+    _c("h2", { staticClass: "title" }, [_vm._v(" Vacantes disponibles ")]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.announcements, function(announcement) {
+        return _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-body" }, [
+              _c("span", { staticClass: "author" }, [
+                _vm._v(" " + _vm._s(announcement.title) + " ")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(" " + _vm._s(announcement.location_content) + " ")
+              ]),
+              _vm._v(" "),
+              _c("p", [_vm._v(" " + _vm._s(announcement.description))]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-info btn-block",
+                  attrs: { href: "/anuncio/" + announcement.id }
+                },
+                [_vm._v(" Ver vacante ")]
+              )
+            ])
+          ])
+        ])
+      })
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "jumbotron jumbotron-fluid" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("h3", [_vm._v("Fluid jumbotron")]),
-          _vm._v(" "),
-          _c("p", { staticClass: "lead" }, [
-            _vm._v(
-              "This is a modified jumbotron that occupies the entire horizontal space of its parent."
-            )
-          ])
-        ])
-      ])
+    return _c("ul", [
+      _c("li", [_vm._v(" Lorem ")]),
+      _vm._v(" "),
+      _c("li", [_vm._v(" Lorem ")]),
+      _vm._v(" "),
+      _c("li", [_vm._v(" Lorem ")])
     ])
   }
 ]
@@ -48520,7 +48899,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-8f5faa62", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1a9916bb", module.exports)
   }
 }
 

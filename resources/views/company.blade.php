@@ -1,5 +1,5 @@
 @extends('template')
 
 @section('content')
-    <announcement></announcement>
+    <company></company>
 @endsection
