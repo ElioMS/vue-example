@@ -2,6 +2,6 @@
 
 @section('content')
 
-   <registro></registro>
+   <register></register>
 
 @endsection

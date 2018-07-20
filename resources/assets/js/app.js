@@ -11,7 +11,7 @@ Vue.component('announcement-list', require('./components/AnnouncementsComponent.
 Vue.component('partners-list', require('./components/PartnerComponent.vue'));
 Vue.component('filters', require('./components/FiltersComponent.vue'));
 Vue.component('announcement', require('./components/AnnouncementComponent.vue'));
-Vue.component('registro', require('./components/RegistroComponent.vue'));
+Vue.component('register', require('./components/RegistroComponent.vue'));
 Vue.component('company', require('./components/PartnerDetailComponent.vue'));
 
 

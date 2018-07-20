@@ -37,8 +37,13 @@
 				});
             },
             calculatePeriod (date) {
+                console.log('Llega ----->', date);
 				let actualDate = moment(),
                 	announcementDate = moment(date , "DD-MM-YYYY").locale('es');
+
+
+                console.log('actual', actualDate);
+                console.log('nuevo', announcementDate);
 
                 let difference = actualDate.diff(announcementDate);
 

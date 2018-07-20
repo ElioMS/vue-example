@@ -56,28 +56,57 @@
         data () {
             return {
                 data: {
-                    'names': '',
-                    'paternal_surname': '',
-                    'maternal_surname': '',
-                    'document_type_id': '01',
-                    'document_number': '',
-                    'cellphone': '',
-                    'email': '',
-                    'password': '',
-                    'retype_password': ''
+                    names: '',
+                    paternal_surname: '',
+                    maternal_surname: '',
+                    document_type_id: '01' ,
+                    document_number: '',
+                    cellphone: '',
+                    email: '',
+                    password: '',
+                    retype_password: ''
                 }
             }
         },
         methods: {
             register() {
-                axios.post('ruta-post', this.data)
-	                .then( response => {
-                    console.log(response);
-                })
-                    .catch(function (error) {
-                        // handle error
-                        console.log(error);
-                    });
+
+                $.ajax({
+                    url : 'http://181.65.247.204:4500/account/register',
+                    type: 'post',
+                    dataType: 'json',
+                    data: this.data,
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+
+                // axios({
+                // 	method: 'post',
+                // 	url : 'http://181.65.247.204:4500/account/register',
+                // 	data : this.data
+                // })
+                // .then(function (response) {
+                // 	console.log(response);
+                // })
+                // axios.post('http://181.65.247.204:4500/account/register', {
+                // 		names: this.data.names,
+                // 		paternal_surname: this.data.paternal_surname,
+                // 		maternal_surname: this.data.maternal_surname,
+                // 		document_type_id: this.data.document_type_id,
+                // 		document_number: this.data.document_number,
+                // 		cellphone: this.data.cellphone,
+                // 		email: this.data.email,
+                // 		password: this.data.password,
+                // 		retype_password: this.data.retype_password
+                // })
+	               //  .then( response => {
+                //     console.log(response);
+                // })
+                // .catch(function (error) {
+                //     // handle error
+                //     console.log(error);
+                // });
             }
         }
     }

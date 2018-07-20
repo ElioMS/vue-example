@@ -24,8 +24,8 @@
                 <a class="nav-link" href="{{ url('anuncios') }}"> Anuncios </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('registrar') }}"> Anuncios </a>
+            <li class="nav-item @isset($segment[0]) {{ $segment[0] == 'registrar' ? 'active' : '' }} @endisset">
+                <a class="nav-link" href="{{ url('registrar') }}"> Registro </a>
             </li>
         </ul>
     </div>
