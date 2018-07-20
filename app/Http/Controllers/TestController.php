@@ -14,6 +14,9 @@ class TestController extends Controller
 	public function callback(Request $request)
 	{
 		$token = $request->get('token');
+
+		$data = json_encode(['token' => $token]);
+
 		$ch = curl_init();
 
 		curl_setopt($ch, CURLOPT_URL, "http://181.65.247.204:4500/account/activate");
@@ -22,9 +25,7 @@ class TestController extends Controller
 
 		curl_setopt($ch, CURLOPT_POST, TRUE);
 
-		curl_setopt($ch, CURLOPT_POSTFIELDS, "{
-			  token: $token
-			}");
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 			"Content-Type: application/json"
