@@ -22,5 +22,5 @@ Route::get('empresa/{id}', function () {
     return view('company');
 });
 
-Route::get('callback', 'TestController@authorize');
+Route::get('callback', 'TestController@callback');
 

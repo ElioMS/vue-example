@@ -11,7 +11,7 @@ class TestController extends Controller
 		dd($request->all());
 	}
 
-	public function authorize(Request $request)
+	public function callback(Request $request)
 	{
 		$token = $request->get('token');
 		$ch = curl_init();
